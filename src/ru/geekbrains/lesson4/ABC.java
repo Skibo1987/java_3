@@ -45,22 +45,6 @@ public class ABC {
                             mon.wait();
                         }
                         System.out.println("C");
-                        currentLetter = 'D';
-                        mon.notifyAll();
-                    }
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(()  -> {
-            try {
-                for (int i = 0; i < 5; i++) {
-                    synchronized (mon) {
-                        while (currentLetter !='D'){
-                            mon.wait();
-                        }
-                        System.out.println("D");
                         currentLetter = 'A';
                         mon.notifyAll();
                     }
