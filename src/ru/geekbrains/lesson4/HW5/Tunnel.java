@@ -2,7 +2,7 @@ package ru.geekbrains.lesson4.HW5;
 
 import java.util.concurrent.Semaphore;
 
-public class Tunnel {
+public class Tunnel extends Stage {
     private Semaphore smp;
 
     public Tunnel() {
