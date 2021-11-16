@@ -1,9 +1,10 @@
 package ru.geekbrains.lesson4.HW5;
 
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Car {
+public class Car implements Runnable {
     private static AtomicInteger ai;
     private static int CARS_COUNT;
 
@@ -48,6 +49,9 @@ public class Car {
             barrier.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }catch (BrokenBarrierException e) {
+            e.printStackTrace();
         }
+
     }
 }
